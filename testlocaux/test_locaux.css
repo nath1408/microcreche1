@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Segoe UI, sans-serif;
+    background-color: aliceblue;
+}
+.container{
+    width: 1200px;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    background-color: #faf1f2;
+}
+.header {
+    background-color: #FF00FF;
+
+}
+
+
+
+h1{
+    color: white;
+}
+
+
+h2{
+    font-size: 40px;
+    color: deeppink;
+    font-family: "Lucida Calligraphy", sans serif;
+    text-align: center;
+}
+.float-right{
+    float:right;!important;
+}
+.float-left{
+    float:left;!important;
+}
+.text-center{
+    text-align: center!important;
+}
+
+
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#00BFFF;
+    color: #fff;
+}
+.nav-links a {
+    color: #fff;
+}
+nav a {
+    text-decoration: none;
+}
+nav li {
+    list-style: none;
+}
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+.menu li:hover {
+    background-color: deeppink;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.menu li {
+    padding: 5px 14px;
+}
+input[type=checkbox]{
+    display: none;
+}
+
+
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/* Pagination */
+.blog-pagination {
+    margin-bottom: 4rem;
+}
+.blog-pagination > .btn {
+    border-radius: 2rem;
+}
+
+/*
+ * Blog posts
+ */
+.blog-post {
+    margin-bottom: 4rem;
+}
+.blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 20px;
+    color: deeppink;
+    font-family: "Lucida Calligraphy", sans serif;
+    text-align: center;
+}
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+}
+
+/*
+ * Footer
+ */
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #727272;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.text-gallerie{
+
+}

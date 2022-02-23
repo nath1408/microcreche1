@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>test</title>
+  <link rel="stylesheet" href="style_checkout.css">
+
+
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buy cool new product</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+<section>
+
+  <form action="paiement.php" method="POST">
+    <div class="description">
+      <h3>Stubborn Attachments</h3>
+      <h5>$20.00</h5>
+    </div>
+    <button type="submit" id="checkout-button">Checkout</button>
+  </form>
+</section>
+</body>
+</html>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script>
+var stripe = Stripe('sk_test_51Je2VpDXTnSkuzb6zSySIA5uccZnYzYOTAXro0FlLw3JH6F80A4V0XSvBDiXXn13pNg5jmMjMR52uLaQoUS3j7XB005t4iNN21')
+  var elements = stripe.elements();
+  var style ={
+    base:{
+      fontsize: '16px',
+      color:"#32325d",
+    }
+  };
+  var card= elements.create('card', {style:style});
+  card.mount('#card-element');
+
+  card.addEventListener('change', function(event){
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    }else{
+      displayError.textContent = '';
+    }
+  });
+  var form=document.getElementById('paiement_form');
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+    stripe.createToken(card).then(function(result){
+      if(result.error) {
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      }else{
+        stripeTokenHandler(result.token);
+      }
+    });
+});
+  function stripeTokenHandler(token){
+    var form = document.getElementById('paiement_form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    form.submit();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+* {
+   margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Segoe UI, sans-serif;
+    background-color: aliceblue;
+}
+
+.container {
+    width: 1200px;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+
+}
+/**************************************************** HAUT ************************************************/
+header {
+    background-color: #FF00FF;
+}
+h1{
+    color: white;
+
+}
+
+nav li {
+    list-style: none;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#00BFFF;
+
+}
+nav a {
+    color: #fff;
+}
+footer {
+    width: 1200px;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    background:deeppink;
+    height:50px;
+    position:absolute;
+    bottom:0;
+
+
+}
+
+
+p{
+    text-align: center;
+    padding-top: 5px;
+    color: white;
+}
+
+
+
+/**************************************************** GENERAL ************************************************/
+.erreur{
+    background: #ff0000;
+    padding: 5px;
+    margin: 5px;
+}
+.validation{
+    background: #669933;
+    padding: 5px;
+    margin: 5px;
+}

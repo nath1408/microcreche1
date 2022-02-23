@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Segoe UI, sans-serif;
+    background-color: aliceblue;
+}
+
+
+/**************************************************** MILIEU ************************************************/
+
+
+.boutique-gauche{
+    float: left; : 30%;
+    background: #04baf6;
+    min-height: 500px;
+    margin-left:80px;
+    padding-top: 10px;
+    text-align: center;
+    color: #fff;
+
+}
+.boutique-gauche  ul{
+    list-style: none;
+    padding: 0;
+}
+.boutique-gauche  ul  li  a{
+    display: block;
+    padding: 50px;
+    color:white;
+}
+
+.boutique-gauche  ul  li  a:hover{
+    background: deeppink;
+    color: #fff;
+}
+.fiche{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+
+}
+.card {
+    width: 400px;
+    height: 20em;
+    border: 5px solid rgb(111,41,97);
+    border-radius: .5em;
+    padding: 10px;
+    justify-content: space-between;
+    align-content: space-between;
+    text-align: center;
+}
+.fiche-article{
+    width: auto;
+    height: auto;
+    padding: 30px;
+    justify-content: space-between;
+    align-content: space-between;
+    text-align: center;
+
+}
+h2{
+    font-size: 30px;
+}
+.prix{
+    color: #0069d6;
+}
+.info{
+    color: #0069d6;
+}
+
+
+
+
+
