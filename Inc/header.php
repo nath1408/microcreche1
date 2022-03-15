@@ -36,13 +36,15 @@
                 echo '<a href="' . RACINE_SITE . 'moncompte.php">Voir votre profil</a>';
                 echo '<a href="' . RACINE_SITE . 'boutique.php">Accès à la boutique</a>';
                 echo '<a href="' . RACINE_SITE . 'panier.php">Voir votre panier</a>';
-                echo '<a href="' . RACINE_SITE . 'connexion.php?action=deconnexion">Se déconnecter</a>';
+                echo '<a href="' . RACINE_SITE . 'boutique.php?action=deconnexion">Se déconnecter</a>';
             }
             else
             {
 
                 echo '<li><a href="' . RACINE_SITE . 'inscription.php">Inscription</a>';
                 echo '<li><a href="' . RACINE_SITE . 'connexion.php">Connexion</a>';
+                echo '<li><a href="' . RACINE_SITE . 'boutique.php">Acces à la boutique</a>';
+
 
                 echo '<li><a href="' . RACINE_SITE . 'testhome/test_home.html">Retour à la page d\'accueil de la micro crèche</a>';
                 }

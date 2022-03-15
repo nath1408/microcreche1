@@ -16,14 +16,10 @@ function queryMysql($query)
 }
 //Supprimer la session
 
-function internauteEstConnecte()
-{
-    if(!isset($_SESSION['membre'])) return false;
-    else return true;
-}
+
 //------------------------------------
 function internauteEstConnecteEtEstAdmin()
 {
-    if(internauteEstConnecte() && $_SESSION['membre']['statut'] == 1) return true;
-    else return false;
+    if(!isset($_SESSION['admin'])) return false;
+    else return true;
 }

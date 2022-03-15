@@ -15,13 +15,14 @@
 <?php
 require_once("Inc/config.php");
 //--------------------------------- TRAITEMENTS PHP ---------------------------------//
+
 if(isset($_GET['id_article']))  { $resultat = queryMysql("SELECT * FROM article WHERE id_article = '$_GET[id_article]'"); }
 if($resultat->num_rows <= 0) { header("location:boutique.php"); exit(); }
 
 $article = $resultat->fetch_assoc();
 $contenu .= '<div class="fiche-article">';
 $contenu .= "<h2>Titre : $article[titre]</h2><br>";
-$contenu .= "<p class='info'>Categorie: $article[categories]</p>";
+$contenu .= "<p class='info'>Categorie: $article[categorie]</p>";
 $contenu .= "<p class='info'>Couleur: $article[couleur]</p>";
 $contenu .= "<p class='info'>Taille: $article[taille]</p>";
 $contenu .= "<img src='$article[photo]' ='150' height='150'>";
@@ -51,10 +52,10 @@ else {
     $contenu .= 'Rupture de stock !';
 }
 
-$contenu .= "<br><a href='boutique.php?categories=" .$article['categories'] . "'>Retour vers la séléction de " . $article['categories'] . "</a>";
-$contenu .= '</div>';
+$contenu .= "<br><a href='boutique.php?categorie=" .$article['categorie'] . "'>Retour vers la séléction de " . $article['categorie'] ."</a>";
 //--------------------------------- AFFICHAGE HTML ---------------------------------//
 require_once ("Inc/header.php");
 echo $contenu;
-require_once("Inc/footer.php"); ?>
+require_once("Inc/footer.php"); 
+?>
 

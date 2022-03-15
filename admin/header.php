@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Title</title>
-    <link href="<?php echo RACINE_SITE; ?>/boutique/Inc/CSS/style.css" rel="stylesheet">
+    <link href="<?php echo RACINE_SITE; ?>/Inc/CSS/style.css" rel="stylesheet">
 
 
 
@@ -19,7 +19,7 @@
         <header>
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
-                <img src="<?php echo RACINE_SITE; ?>/boutique/photos/logo.png" alt="logo">
+                <img src="<?php echo RACINE_SITE; ?>/Inc/img/logo.png" alt="logo">
             </div>
             <div class="row ">
                 <h1 class="titre">La boutique des lutins</h1>
@@ -42,13 +42,13 @@
                 echo '<a href="' . RACINE_SITE . 'moncompte.php">Voir votre profil</a>';
                 echo '<a href="' . RACINE_SITE . 'boutique.php">Accès à la boutique</a>';
                 echo '<a href="' . RACINE_SITE . 'panier.php">Voir votre panier</a>';
-                echo '<a href="' . RACINE_SITE . '../boutique/connexion.php">Se déconnecter</a>';
+                echo '<a href="' . RACINE_SITE . '../boutique/connexionadmin.php">Se déconnecter</a>';
             }
             else
             {
 
                 echo '<a href="' . RACINE_SITE . 'inscription.php">Inscription</a>';
-                echo '<a href="' . RACINE_SITE . 'connexion.php">Connexion</a>';
+                echo '<a href="' . RACINE_SITE . 'connexionadmin.php">Connexion</a>';
 
 
             }

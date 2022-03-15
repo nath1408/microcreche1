@@ -14,7 +14,7 @@
 
 <div class="container">
     <footer class="footer">
-        <p><?php echo date('Y'); ?> - Tous droits reservés - Nathalie Form.</p>
+        <p><?php echo date('Y'); ?> - Tous droits reservés - Nathalie Form.<?php echo '<a href="' . RACINE_SITE . 'admin/connexionadmin.php">Connexion administrateur</a>';?></p>
     </footer>
 </div>
 

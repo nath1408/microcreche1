@@ -1,5 +1,6 @@
 {
     "require": {
-        "stripe/stripe-php": "^7.113"
+        "stripe/stripe-php": "^7.113",
+      "ext-mysqli": "*"
     }
 }

@@ -15,36 +15,67 @@
 <?php
 require_once("Inc/config.php");
 //--------------------------------- TRAITEMENTS PHP ---------------------------------//
-//--- AFFICHAGE DES CATEGORIES ---//
-$categories_articles = queryMysql("SELECT DISTINCT categories FROM article");
-$contenu .= '<div class="boutique-gauche">';
-$contenu .= "<ul>";
-while($cat = $categories_articles->fetch_assoc())
+if(isset($_GET['action']) && $_GET['action'] == "deconnexion")
 {
-    $contenu .= "<li><a href='?categories=" . $cat['categories'] . "'>" . $cat['categories'] . "</a></li>";
+    session_destroy();
 }
-$contenu .= "</ul>";
-$contenu .= "</div>";
-//--- AFFICHAGE DES PRODUITS ---//
-$contenu .= '<div class="fiche">';
-if(isset($_GET['categories']))
+if(internauteEstConnecte())
 {
-    $donnees = queryMysql("select id_article,reference,titre,photo,prix from article where categories='$_GET[categories]'");
+    header("location:moncompte.php");
+}
+//--- AFFICHAGE DES CATEGORIES ---//
+$contenu .= '<div class="container-fluid bcontent">';
+
+$contenu .= '<div class="row">';
+$contenu .= '<div class="col">';
+
+$contenu .= '<nav class=" navbar">';
+$contenu .= '<ul class="navbar-nav">';
+$resultat = queryMysql('SELECT * FROM categories');
+
+while ($donnees= mysqli_fetch_assoc($resultat) )
+{
+    $contenu.= '<li ><a  href="?categorie=' . $donnees['id'].'">' .$donnees['name']. '</a></li>'."\n"; //boucle pour lister les catégories et en faire des liens
+}
+$contenu .= '</ul>';
+$contenu .= '</nav>';
+
+if(isset($_GET['categorie']))
+{
+    $donnees = queryMysql("select id_article,reference,titre, description, couleur, taille, photo,prix from article where categorie='$_GET[categorie]'");
 
 
     while($article = $donnees->fetch_assoc())
     {
         $contenu .= '<div class="card">';
-        $contenu .= "<h2>$article[titre]</h2>";
+        $contenu .= "<h2 >$article[titre]</h2>";
         $contenu .= "<a href=\"description_article.php?id_article=$article[id_article]\"><img src=\"$article[photo]\" =\"130\" height=\"100\"></a>";
         $contenu .= "<p class='prix'>$article[prix] €</p>";
         $contenu .= '<a href="description_article.php?id_article=' . $article['id_article'] . '">Voir la fiche</a>';
         $contenu .= '</div>';
 
     }
+    $contenu .= '</div>';
+    $contenu .= '</div>';
+
 }
-$contenu .= '</div>';
-//--------------------------------- AFFICHAGE HTML ---------------------------------//
+
+
+
+
+//--- AFFICHAGE DES FICHES ARTICLES ---//
+
+
+
+
 require_once ("Inc/header.php");
+
+
+
+
 echo $contenu;
+
+
+
+
 require_once("Inc/footer.php"); ?>

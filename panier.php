@@ -40,7 +40,7 @@ if(isset($_POST['payer']))
             $contenu .= '<div class="erreur">Quantité demandée: ' . $_SESSION['panier']['quantite'][$i] . '</div>';
             if($article['stock'] > 0)
             {
-                $contenu .= '<div class="erreur">la quantité de l\'article ' . $_SESSION['panier']['id_artcile'][$i] . ' à été réduite car notre stock était insuffisant, veuillez vérifier vos achats.</div>';
+                $contenu .= '<div class="erreur">la quantité de l\'article ' . $_SESSION['panier']['id_article'][$i] . ' à été réduite car notre stock était insuffisant, veuillez vérifier vos achats.</div>';
                 $_SESSION['panier']['quantite'][$i] = $article['stock'];
             }
             else

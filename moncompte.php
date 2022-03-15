@@ -15,7 +15,7 @@
 <?php
 require_once("Inc/config.php");
 //--------------------------------- TRAITEMENTS PHP ---------------------------------//
-if(!internauteEstConnecte()) header("location:connexion.php");
+if(!internauteEstConnecte()) header("location:boutique.php");
 // debug($_SESSION);
 $contenu .= '<div class="card">';
 $contenu .= '<p class="centre">Bonjour <strong>' . $_SESSION['membre']['pseudo'] . '</strong></p>';
