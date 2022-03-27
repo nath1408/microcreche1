@@ -7,7 +7,7 @@ $connexion->set_charset("utf8");
 //--------- SESSION
 session_start();
 //--------- CHEMIN
-define("RACINE_SITE","/microcreche1/");
+define("RACINE_SITE","/site de la micro creche/");
 //--------- VARIABLES
 $contenu = '';
 //--------- AUTRES INCLUSIONS

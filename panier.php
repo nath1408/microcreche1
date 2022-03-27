@@ -55,7 +55,7 @@ if(isset($_POST['payer']))
     if(!isset($erreur))
     {
         queryMysql("INSERT INTO achats (id_membre, montant, date_achat) VALUES (" . $_SESSION['membre']['id_membre'] . "," . montantGlobal() . ", NOW())");
-        $id_achat = $connexion->insert_id;
+        $id_achat = $resultat->insert_id;
         for($i = 0; $i < count($_SESSION['panier']['id_article']); $i++)
         {
             queryMysql("INSERT INTO achats_details (id_achat, id_article, quantite, prix) VALUES ($id_achat, " . $_SESSION['panier']['id_article'][$i] . "," . $_SESSION['panier']['quantite'][$i] . "," . $_SESSION['panier']['prix'][$i] . ")");
@@ -96,6 +96,7 @@ else
     echo "</body>";
 }
 echo "</table><br>";
+echo '<h4><a href="boutique.php">Continuez vos achats</a></h4>';
  if(internauteEstConnecte())
     {
         echo '<form method="post" action="checkout.html">';
@@ -104,6 +105,7 @@ echo "</table><br>";
     }
     else
     {
+
         echo '<tr><td colspan="3">Veuillez vous <a href="inscription.php">inscrire</a> ou vous <a href="connexion.php">connecter</a> afin de pouvoir payer</td></tr>';
     }
     echo "<tr><td colspan='5'><a href='?action=vider'>Vider mon panier</a></td></tr>";

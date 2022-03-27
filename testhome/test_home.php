@@ -19,7 +19,6 @@
   <link href="test.css" rel="stylesheet">
 </head>
 <body>
-
 <div class="container">
     <header class="header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
@@ -27,37 +26,27 @@
                 <img src="../images/logo.png" alt="logo">
             </div>
             <div class="row ">
-                <h1 class="titre">Micro crèche les lutins des alpes</h1>
+                <h1 >Micro crèche les lutins des alpes</h1>
             </div>
         </div>
     </header>
-
-  <nav class="navbar">
-
-
-     <ul class="nav-links">
-       <input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-       <div class="menu">
-       <li><a class="p-2 text-white" href="#">Accueil</a></li>
-       <li><a class="p-2 text-white" href="../testfonctionnement/test_fonctionnement.html">Fonctionnement</a></li>
-       <li><a class="p-2 text-white" href="../testlocaux/test_locaux.html">Les locaux</a></li>
-       <li><a class="p-2 text-white" href="../testprojet/testprojet.html">Le projet pédagogique</a></li>
-       <li><a class="p-2 text-white" href="../testtarifs/test_tarifs.html">Tarifs</a></li>
-       <li><a class="p-2 text-white" href="../contact/index_contact.php">Contactez nous</a></li>
-       <li><a class="p-2 text-white" href="../boutique.php">Boutique</a></li>
-       </div>
-
-     </ul>
-
+    <nav class="navbar">
+        <ul class="nav-links">
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <div class="menu">
+                <li><a class="p-2 text-white" href="../testhome/test_home.php">Accueil</a></li>
+                <li><a class="p-2 text-white" href="../testfonctionnement/test_fonctionnement.html">Fonctionnement</a></li>
+                <li> <a class="p-2 text-white" href="../testlocaux/test_locaux.html">Les locaux</a></li>
+                <li><a class="p-2 text-white" href="../testprojet/testprojet.html">Le projet pédagogique</a></li>
+                <li><a class="p-2 text-white" href="../testtarifs/test_tarifs.html">Tarifs</a></li>
+                <li><a class="p-2 text-white" href="../contact/index_contact.php">Contactez nous</a></li>
+                <li><a class="p-2 text-white" href="../boutique/boutique.php">Boutique</a></li>
+            </div>
+        </ul>
     </nav>
 </div>
-
-
-
-
-
-
+<br>
 <main class="container">
   <div class="row ">
     <div class="col">
@@ -71,20 +60,12 @@
     </div>
     <div class="col">
       <img src="../images/img_3.png" class=" float-end" width="200" height="200">
-
     </div>
   </div>
-
-
-
   <div class="row g-5">
     <div class="col-md-12">
-      <h2 class="pb-4 mb-4 fst-italic">
-       Entrez dans le royaume des lutins
-      </h2>
-
+      <h2 class="pb-4 mb-4 fst-italic">Entrez dans le royaume des lutins</h2>
       <article class="information">
-
         <div class="horaire">
           <p>La micro crèche est située au 3 rue des Orchidées, 05240 la Salle les Alpes</p>
           <p>Les horaires d'ouverture sont:</p>
@@ -93,7 +74,6 @@
           <p >Intersaison: mai juin et septembre à novembre: 8h 18h</p><br><br>
           <br>
         </div>
-
         <h3 class="information-title">Accueil réguliers et occasionnels</h3><br>
         <p class="accueil">Quelque soit la commune d'habitation dans le briançonnais, vos enfants sont les bienvenus. Nous les accueillons agés de 3 mois à 4 ans,dans une cadre agréable.
           Le nombre restreint d'enfants accueillis, 10 ans simultanément, et le fort taux d'encadrement permettent la prise en charge de chaque enfant en tant qu'un individu unique.
@@ -109,25 +89,17 @@
         <p class="accueil">L'équipe pédagogique a bien compris les nombreux avantages pour bébé et l'adulte de communiquer par les signes. Bébé a bien des choses à dire avant même de pouvoir parler, il cherche à s'exprimer naturellement
           avec ses mains et sait faire des gestes comme "bravo", "au revoir",.. il lui est facile d'utiliser d'autres signes comme "manger", "eau", "boire", etc.
           L'équipe est formée à cet outil et l'utilise quotidiennement.<br> Notre objectif est d'utiliser quelques signes simples, associés aux mots du quotidien, en direction des enfants</p>
-
       </article>
     </div>
   </div>
 </main>
 <footer id="sticky-footer" class="flex-shrink-0 py-4  text-white-50">
-  <div class="text-center">
-    <p class="text-black">Site réalisé par Nathalie Form </p>
-    <a class="text-white " href="#">MENTIONS LEGALES</a><br>
-    <a class="text-white" href="../admin/login.html">Connexion administrateur</a>
-    <a class="text-white " href="#">Back to top</a>
-  </div>
+    <div class="text-center">
+        <p class="text-black">Site réalisé par Nathalie Form </p>
+        <a class="text-white " href="#">MENTIONS LEGALES</a><br>
+        <a class="text-white" href="../admin/login.html">Connexion administrateur</a>
+        <a class="text-white " href="#">Back to top</a>
+    </div>
 </footer>
-
-
-
-
-
-
-
 </body>
 </html>

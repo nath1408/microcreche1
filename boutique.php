@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
     <link href='https://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="boutique.css">
+    <link href="<?php echo RACINE_SITE; ?>Inc/CSS/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -23,22 +23,7 @@ if(internauteEstConnecte())
 {
     header("location:moncompte.php");
 }
-//--- AFFICHAGE DES CATEGORIES ---//
-$contenu .= '<div class="container-fluid bcontent">';
-
-$contenu .= '<div class="row">';
-$contenu .= '<div class="col">';
-
-$contenu .= '<nav class=" navbar">';
-$contenu .= '<ul class="navbar-nav">';
-$resultat = queryMysql('SELECT * FROM categories');
-
-while ($donnees= mysqli_fetch_assoc($resultat) )
-{
-    $contenu.= '<li ><a  href="?categorie=' . $donnees['id'].'">' .$donnees['name']. '</a></li>'."\n"; //boucle pour lister les catégories et en faire des liens
-}
-$contenu .= '</ul>';
-$contenu .= '</nav>';
+/***********************Affichage des articles*******************************************/
 
 if(isset($_GET['categorie']))
 {
@@ -48,22 +33,48 @@ if(isset($_GET['categorie']))
     while($article = $donnees->fetch_assoc())
     {
         $contenu .= '<div class="card">';
-        $contenu .= "<h2 >$article[titre]</h2>";
-        $contenu .= "<a href=\"description_article.php?id_article=$article[id_article]\"><img src=\"$article[photo]\" =\"130\" height=\"100\"></a>";
+        $contenu .= "<a href=\"description_article.php?id_article=$article[id_article]\"><img src=\"$article[photo]\" =\"130\" height=\"100\" alt='photo'></a>";
         $contenu .= "<p class='prix'>$article[prix] €</p>";
         $contenu .= '<a href="description_article.php?id_article=' . $article['id_article'] . '">Voir la fiche</a>';
         $contenu .= '</div>';
 
     }
-    $contenu .= '</div>';
-    $contenu .= '</div>';
+
+
 
 }
+else{
+    $donnees = queryMysql("select id_article, categorie,titre, taille, photo,prix from article order by date_ajout desc limit 0,8 ");
 
 
 
+    while ($article = $donnees->fetch_assoc()) {
+      $contenu .=' <div class="album py-5 ">';
+        $contenu .= ' <div class="container">';
 
-//--- AFFICHAGE DES FICHES ARTICLES ---//
+
+    $contenu .='  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">';
+    $contenu .='    <div class="col">';
+
+
+     $contenu .='      <div class="card shadow-sm">';
+        $contenu .= '<div class="card-body ">';
+        $contenu .= "<p class='prix'>$article[categorie] </p>";
+        $contenu .= "<p><img src=\"$article[photo]\" =\"130\" height=\"100\" alt='photo'></a></p>";
+        $contenu .= "<p class='prix'>$article[prix] €</p>";
+        $contenu .= '<div class="card-text"></div><a href="description_article.php?id_article=' . $article['id_article'] . '">Voir la fiche</a></div>';
+        $contenu .= '</div>';
+        $contenu .= '</div>';
+        $contenu .= '</div>';
+        $contenu .= '</div>';
+        $contenu .= '</div>';
+        $contenu .= '</div>';
+
+
+
+    }
+}
+
 
 
 
@@ -71,11 +82,7 @@ if(isset($_GET['categorie']))
 require_once ("Inc/header.php");
 
 
-
-
 echo $contenu;
-
-
 
 
 require_once("Inc/footer.php"); ?>

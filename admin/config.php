@@ -7,7 +7,7 @@ if ($connexion->connect_error) die('Un problème est survenu lors de la tentativ
 //--------- SESSION
 session_start();
 //--------- CHEMIN
-define("RACINE_SITE","/microcreche1/");
+define("RACINE_SITE","/site de la micro creche/");
 //--------- VARIABLES
 $contenu = '';
 //--------- AUTRES INCLUSIONS

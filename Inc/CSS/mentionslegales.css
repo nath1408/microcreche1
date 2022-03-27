@@ -1,0 +1,19 @@
+.container{
+    width: 1200px;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+
+}
+
+.editeur{
+    color: #b51a00;
+}
+.span{
+    color: rgb(0, 0, 0);
+}
+.info{
+    color: #323333;
+}
+.info1{
+    color: #000000
+}

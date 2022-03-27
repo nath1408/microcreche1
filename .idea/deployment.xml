@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" uploadOnCheckin="9ebf0a65-7bfc-4f4e-a9fe-e66bb278fd41" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="my server">
         <serverdata>
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="my server" />
   </component>
 </project>

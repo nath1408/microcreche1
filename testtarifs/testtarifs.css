@@ -16,7 +16,6 @@ body{
     background-color: #faf1f2;
 }
 header {
-
     background-color: #FF00FF;
 }
 
@@ -36,15 +35,7 @@ h2{
     font-family: "Lucida Calligraphy", sans serif;
     text-align: center;
 }
-.float-right{
-    float:right;!important;
-}
-.float-left{
-    float:left;!important;
-}
-.text-center{
-    text-align: center!important;
-}
+
 
 
 
@@ -90,37 +81,23 @@ input[type=checkbox]{
     user-select: none;
 }
 
-/* Pagination */
-.blog-pagination {
-    margin-bottom: 4rem;
-}
-.blog-pagination > .btn {
-    border-radius: 2rem;
-}
 
-/*
- * Blog posts
- */
-.blog-post {
+.information {
     margin-bottom: 4rem;
 }
-.blog-post-title {
+.information-title {
     margin-bottom: .25rem;
-
     font-size: 20px;
     color: deeppink;
     font-family: "Lucida Calligraphy", sans serif;
     text-align: center;
 }
-.blog-post-meta {
-    margin-bottom: 1.25rem;
-    color: #727272;
-}
+
 
 /*
  * Footer
  */
-.blog-footer {
+#sticky-footer{
     padding: 2.5rem 0;
     color: #727272;
     text-align: center;
@@ -138,11 +115,6 @@ input[type=checkbox]{
     user-select: none;
 }
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
 table,th,td{
     border:1px solid #cccccc;
     text-align: center;

@@ -102,7 +102,7 @@ return $var;
     <div class="heading">
         <h2>Contactez-nous</h2>
     </div>
-    <p class="col-4 pt-1  "><a href="../testhome/test_home.html" class="text-white">Retour à la page d'accueil</a></p>
+    <p class="col-4 pt-1  "><a href="../testhome/test_home.php" class="text-white">Retour à la page d'accueil</a></p>
 
     <form id="contact-form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" role="form">
         <div class="row">

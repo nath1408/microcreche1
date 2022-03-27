@@ -88,58 +88,16 @@ input[type=checkbox]{
     user-select: none;
 }
 
-/* Pagination */
-.blog-pagination {
-    margin-bottom: 4rem;
-}
-.blog-pagination > .btn {
-    border-radius: 2rem;
-}
-
-/*
- * Blog posts
- */
-.blog-post {
-    margin-bottom: 4rem;
-}
-.blog-post-title {
-    margin-bottom: .25rem;
-    font-size: 20px;
-    color: deeppink;
-    font-family: "Lucida Calligraphy", sans serif;
-    text-align: center;
-}
-.blog-post-meta {
-    margin-bottom: 1.25rem;
-    color: #727272;
-}
 
 /*
  * Footer
  */
-.blog-footer {
+#sticky-footer{
     padding: 2.5rem 0;
-    color: #727272;
+
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: deeppink;
     border-top: .05rem solid #e5e5e5;
 }
-.blog-footer p:last-child {
-    margin-bottom: 0;
-}
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
-.text-gallerie{
 
-}

@@ -42,28 +42,34 @@ if(isset($_GET['action']) && $_GET['action'] == "supprimer")
 
 //--- ENREGISTREMENT PRODUIT ---//
 if(!empty($_POST))
-{	// debug($_POST);
+{   // debug($_POST);
     $photo_bdd = "";
-
+    if(isset($_GET['action']) && $_GET['action'] == 'modification')
+    {
+        $photo_bdd = $_POST['photo_actuelle'];
+    }
     if(!empty($_FILES['photo']['name']))
-    {	// debug($_FILES);
+    {   // debug($_FILES);
         $nom_photo = $_POST['reference'] . '_' .$_FILES['photo']['name'];
         $photo_bdd = RACINE_SITE . "photo/$nom_photo";
         $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . RACINE_SITE . "/photo/$nom_photo";
-       copy($_FILES['photo']['tmp_name'],$photo_dossier);
+        move_uploaded_file($_FILES['photo']['tmp_name'],$photo_dossier);
     }
+
+
     foreach($_POST as $indice => $valeur)
     {
         $_POST[$indice] = htmlEntities(addSlashes($valeur));
     }
-    queryMysql("REPLACE INTO article (id_article, reference, categorie, titre, description, couleur, taille, photo, prix, stock) 
-values (NULL, '$_POST[reference]', '$_POST[categorie]', '$_POST[titre]', '$_POST[description]', '$_POST[couleur]', '$_POST[taille]',  '$photo_bdd',  '$_POST[prix]', '$_POST[stock]' )");
-
-    $contenu .= '<div class="validation">L\'article a été ajouté ou 
-modifié</div>';
+    queryMysql("INSERT INTO article (id_article, reference, categorie, titre, description, couleur, taille, photo, prix, stock) 
+values (NULL, '$_POST[reference]', '$_POST[categorie]', '$_POST[titre]', '$_POST[description]', '$_POST[couleur]', '$_POST[taille]',   '$photo_bdd',  '$_POST[prix]',  '$_POST[stock]')");
+    $contenu .= '<div class="validation">Le produit a été ajouté</div>';
 
 
 }
+
+
+
 
 //--- LIENS ARTICLES ---//
 require_once ("../admin/headertableaudebord.php");
@@ -99,13 +105,17 @@ if(isset($_GET['action']) && $_GET['action'] == "affichage")
                 $contenu .= '<td>' . $information . '</td>';
             }
         }
+
+
         $contenu .= '<td><a href="?action=modifier&id_article=' . $ligne['id_article'] . '"><img src="../Inc/img/modifier.png" height="30px" width="30px"/></a></td>';
         $contenu .= '<td><a href="?action=supprimer&id_article=' . $ligne['id_article'] . '"><img src="../Inc/img/supprimer.png" height="30px" width="30px"/></a></td>';
         $contenu .= '</tr>';
     }
+
     $contenu .= '</table><br /><hr/><br />';
     $contenu .='</div>';
     $contenu .= '</main>';
+
 }
 if(isset($_GET['action']) && $_GET['action'] == "suppression")
 {
@@ -242,9 +252,12 @@ if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == '
         
 
 		<label for="categorie">categorie</label><br>
-        <input type="text" id="categorie" name="categorie" placeholder="la categorie de produit" value="'; if(isset($article_present['categorie'])) echo $article_present['categorie']; echo '" /><br /><br />
-  
-
+       <select name="categorie">
+        <option value="bebe">Bébé</option>
+        <option value="enfant">Enfant</option>
+        <option value="femme">Femme</option>
+      
+    </select><br><br>
 
 
 		<label for="titre">Le libellé</label><br />
@@ -262,6 +275,7 @@ if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == '
 
 		<label for="photo">Les photos</label><br/>
 		<input type="file" id="photo" name="photo" /><br /><br />';
+
 
     if(isset($article_present))
     {
@@ -282,6 +296,7 @@ if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == '
 	
 	</form>';
 }
+
 
 ?>
 
